@@ -1,6 +1,6 @@
-<?php 
+<?php
 
 $DB_HOST = "localhost";
 $DB_USERNAME = "root";
 $DB_PASSWORD = "";
-$DB_NAME = "db_ormawa";
+$DB_NAME = "vctdb";

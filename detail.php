@@ -2,30 +2,30 @@
 
 include('config/db.php');
 include('classes/DB.php');
-include('classes/Divisi.php');
-include('classes/Jabatan.php');
-include('classes/Pengurus.php');
+include('classes/Player.php');
+include('classes/Team.php');
+include('classes/Region.php');
 include('classes/Template.php');
 
-$pengurus = new Pengurus($DB_HOST, $DB_USERNAME, $DB_PASSWORD, $DB_NAME);
-$pengurus->open();
+$player = new Player($DB_HOST, $DB_USERNAME, $DB_PASSWORD, $DB_NAME);
+$player->open();
 
-$data = nulL;
+$data = null;
 
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
+if (isset($_GET['id_player'])) {
+    $id = $_GET['id_player'];
     if ($id > 0) {
-        $pengurus->getPengurusById($id);
-        $row = $pengurus->getResult();
+        $player->getPlayerById($id);
+        $row = $player->getResult();
 
         $data .= '<div class="card-header text-center">
-        <h3 class="my-0">Detail ' . $row['pengurus_nama'] . '</h3>
+        <h3 class="my-0">Detail ' . $row['name_player'] . '</h3>
         </div>
         <div class="card-body text-end">
             <div class="row mb-5">
                 <div class="col-3">
                     <div class="row justify-content-center">
-                        <img src="assets/images/' . $row['pengurus_foto'] . '" class="img-thumbnail" alt="' . $row['pengurus_foto'] . '" width="60">
+                        <img src="assets/images/' . $row['player_img'] . '" class="img-thumbnail" alt="' . $row['player_img'] . '" width="60">
                         </div>
                     </div>
                     <div class="col-9">
@@ -34,28 +34,14 @@ if (isset($_GET['id'])) {
                                 <tr>
                                     <td>Nama</td>
                                     <td>:</td>
-                                    <td>' . $row['pengurus_nama'] . '</td>
+                                    <td>' . $row['name_player'] . '</td>
                                 </tr>
                                 <tr>
                                     <td>NIM</td>
                                     <td>:</td>
-                                    <td>' . $row['pengurus_nim'] . '</td>
+                                    <td>' . $row['representing'] . '</td>
                                 </tr>
-                                <tr>
-                                    <td>Semester</td>
-                                    <td>:</td>
-                                    <td>' . $row['pengurus_semester'] . '</td>
-                                </tr>
-                                <tr>
-                                    <td>Divisi</td>
-                                    <td>:</td>
-                                    <td>' . $row['divisi_nama'] . '</td>
-                                </tr>
-                                <tr>
-                                    <td>Jabatan</td>
-                                    <td>:</td>
-                                    <td>' . $row['jabatan_nama'] . '</td>
-                                </tr>
+                                
                             </table>
                         </div>
                     </div>
@@ -68,7 +54,7 @@ if (isset($_GET['id'])) {
     }
 }
 
-$pengurus->close();
+$player->close();
 $detail = new Template('templates/skindetail.html');
-$detail->replace('DATA_DETAIL_PENGURUS', $data);
+$detail->replace('DATA_DETAILS', $data);
 $detail->write();
