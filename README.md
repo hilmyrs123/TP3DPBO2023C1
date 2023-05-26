@@ -4,4 +4,4 @@ Saya Muhammad Hilmy Rasyad Sofyan NIM 2100187 mengerjakan TP 3 dalam mata kuliah
 
 Video ada di folder dokumentasi
 
-Secara garis besar mengikuti file starter di modul namun bagian add belum dibuat viewnya..
+Secara garis besar mengikuti file starter di modul namun bagian add belum dibuat viewnya oleh saya
