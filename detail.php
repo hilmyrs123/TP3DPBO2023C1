@@ -26,22 +26,34 @@ if (isset($_GET['id_player'])) {
                 <div class="col-3">
                     <div class="row justify-content-center">
                         <img src="assets/images/' . $row['player_img'] . '" class="img-thumbnail" alt="' . $row['player_img'] . '" width="60">
-                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <img src="assets/images/' . $row['team_logo'] . '" class="img-thumbnail" alt="' . $row['team_logo'] . '" width="30">
+                    </div>
                     </div>
                     <div class="col-9">
                         <div class="card px-3">
                             <table border="0" class="text-start">
                                 <tr>
-                                    <td>Nama</td>
+                                    <td>Name</td>
                                     <td>:</td>
                                     <td>' . $row['name_player'] . '</td>
                                 </tr>
                                 <tr>
-                                    <td>NIM</td>
+                                    <td>Country</td>
                                     <td>:</td>
                                     <td>' . $row['representing'] . '</td>
                                 </tr>
-                                
+                                <tr>
+                                     <td>Team</td>
+                                     <td>:</td>
+                                     <td>' . $row['name_team'] . ' </td>
+                                </tr>
+                                <tr>
+                                     <td>VCT Region</td>
+                                     <td>:</td>
+                                     <td>' . $row['name_region'] . ' </td>
+                                </tr>
                             </table>
                         </div>
                     </div>

@@ -25,13 +25,12 @@ if (isset($_POST['btn-cari'])) {
 
 $data = null;
 
-// ambil data pengurus
 // gabungkan dgn tag html
 // untuk di passing ke skin/template
 while ($row = $listPlayer->getResult()) {
     $data .= '<div class="col gx-2 gy-3 justify-content-center">' .
         '<div class="card pt-4 px-2 player-thumbnail">
-        <a href="detail.php?id=' . $row['id_player'] . '">
+        <a href="detail.php?id_player=' . $row['id_player'] . '">
             <div class="row justify-content-center">
                 <img src="assets/images/' . $row['player_img'] . '" class="card-img-top" alt="' . $row['player_img'] . '">
             </div>

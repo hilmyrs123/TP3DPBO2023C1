@@ -30,7 +30,7 @@ if (!isset($_GET['id_region'])) {
 
 $view = new Template('templates/skintabel.html');
 
-$mainTitle = 'Team';
+$mainTitle = 'Region';
 $header = '<tr>
 <th scope="row">No.</th>
 <th scope="row">Nama region</th>
